@@ -48,6 +48,22 @@ The pipeline is highly tunable via the `CONFIG` section. Key parameters include:
 | `RECENT_WINDOW` | `56` | Days used to calculate recent mean performance. |
 
 ---
+# 🛠️ Setup & Execution # 
+**Prerequisites**
+Python 3.8+, pandas, numpy, lightgbm, scikit-learn
+
+**Installation:**
+- Clone the repository:
+git clone <your-repo-url>
+cd <your-repo-name>
+
+- Install requirement: pip install pandas numpy lightgbm scikit-learn
+
+- Execution: Simply run the main pipeline script: python forecast_model_lgbm.py
+The script will output the processed submission_lgbm.csv in the root directory and print a summary of the segment distribution and validation sanity checks to the console.
+
+## Performance Tracking
+The model aims to optimize the Weighted Root Mean Squared Scaled Error (WRMSSE). By isolating "Sparse" and "Dead" SKUs, the model prevents noise from distorting the trends of high-volume "Active" items, leading to more stable and accurate predictions across the catalog.
 
 ## 📂 Directory Structure
 
@@ -60,6 +76,4 @@ The pipeline is highly tunable via the `CONFIG` section. Key parameters include:
 
 ---
 
-# 🛠️ Setup & Execution # 
-** Prerequisites **
-Python 3.8+, pandas, numpy, lightgbm, scikit-learn
+
